@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -25,35 +24,44 @@ class MyApp extends StatelessWidget {
 class BodyLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _myListView(context);
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: ListTile(
+              title: Text('Fajr'),
+              onTap: () => _tapCallback,
+            ),
+          ),
+          Expanded(
+            child: ListTile(
+              title: Text('Zohr'),
+              onTap: () => _tapCallback,
+            ),
+          ),
+          Expanded(
+            child: ListTile(
+              title: Text('Asr'),
+              onTap: () => _tapCallback,
+            ),
+          ),
+          Expanded(
+            child: ListTile(
+              title: Text('Magrib'),
+              onTap: () => _tapCallback,
+            ),
+          ),
+          Expanded(
+            child: ListTile(
+              title: Text('Esha'),
+              onTap: () => _tapCallback,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
 void _tapCallback() {}
-
-Widget _myListView(BuildContext context) {
-  return ListView(
-    children: <Widget>[
-      ListTile(
-        title: Text('Fajr'),
-        onTap: () => _tapCallback,
-      ),
-      ListTile(
-        title: Text('Zohr'),
-        onTap: () => _tapCallback,
-      ),
-      ListTile(
-        title: Text('Asr'),
-        onTap: () => _tapCallback,
-      ),
-      ListTile(
-        title: Text('Magrib'),
-        onTap: () => _tapCallback,
-      ),
-      ListTile(
-        title: Text('Esha'),
-        onTap: () => _tapCallback,
-      )
-    ],
-  );
-}
